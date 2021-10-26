@@ -9,14 +9,18 @@
 </head>
 
 <body>
-    <form>
-        <label>Job you are looking for:
-            <input type="text" name="jobTitle" placeholder="job title" required>
-        </label>
-        <label>Enter your expected salary
-            <input type="number" name="jobTitle">
-        </label>
-    </form>
+    <div>
+        <form method=POST action="{{ url_for('search') }}" class="search-bar">
+            <label>Job you are looking for:
+                <input type="text" name="jobTitle" placeholder="job title" required>
+            </label>
+            <label>Enter your expected salary
+                <input type="number" name="salary" placeholder="salary per month">
+            </label>
+            <button type="submit" class="search-btn">search</button>
+            <input type="submit">
+        </form>
+    </div>
 </body>
 
 </html>

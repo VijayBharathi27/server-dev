@@ -27,11 +27,6 @@ def jobsearch():
     return "hello world"
 
 
-@app.route('/jobs')
-def jobsFilter():
-    return ''
-
-
 if __name__ == '__main__':
     # should be removed during production
     app.run(debug=True)
