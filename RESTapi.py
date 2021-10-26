@@ -1,5 +1,5 @@
 
-# import scrapper.py  importing the filtered json can also be done using dump and load method
+# importing the filtered json can be done using dump and load method
 from flask import Flask, render_template, url_for, request, session, redirect
 # , reqparse, abort, fields, marshal_with
 from flask_restful import Api, Resource
