@@ -24,13 +24,25 @@ def scraping():
     search_location = driver.find_element_by_xpath(
         '//*[@id=\"text-input-where\"]')
     search_location.send_keys([location])
+
+    import time
+    time.sleep(1)
+    try:
+        initial_search_button = driver.find_element_by_xpath(
+            '/html/body/div/div[2]/span/div[3]/div[1]/div/div/div/form/div[3]/button')
+    except:
+        initial_search_button = driver.find_element_by_xpath(
+            '/html/body/div/div[2]/span/div[3]/div[1]/div/div/form/button')
+    initial_search_button.click()
     # initial search button click
     # initial_search_button = driver.find_element_by_class_name(
     #     'icl-Button icl-Button--primary icl-Button--md icl-WhatWhere-button')
-    initial_search_button = driver.find_element_by_xpath(
-        '/html/body/div/div[2]/span/div[3]/div[1]/div/div/div/form/button')
-    initial_search_button.click()
-    driver.implicitly_wait(3)
+    # full xpath
+    # initial_search_button = driver.find_element_by_xpath(
+    #    '/html/body/div/div[2]/span/div[3]/div[1]/div/div/div/form/button')
+    # initial_search_button = driver.find_element_by_xpath(
+    #     '//*[@id="whatWhereFormId"]/div[3]/button')
+    # driver.implicitly_wait(3)
     # advanced search button
     advanced_search = driver.find_element_by_xpath(
         "//a[contains(text(),'Advanced Job Search')]")
@@ -46,6 +58,8 @@ def scraping():
     search_button = driver.find_element_by_xpath('//*[@id="fj"]')
     search_button.click()
 
+    import time
+    time.sleep(1)
     close_popup = driver.find_element_by_xpath('//*[@id=\"popover-x\"]/button')
     close_popup.click()
 
