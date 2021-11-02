@@ -14,7 +14,10 @@ def scraping():
     driver.maximize_window()
     driver.delete_all_cookies()
     # opening indeed website
-    Inputs = request.get_json()  # Enter the name and location key in json
+    # Inputs = request.get_json()  # Enter the name and location key in json
+    Inputs = {}
+    Inputs['job'] = request.form.get('job')
+    Inputs['location'] = request.form.get('location')
     driver.get('https://indeed.com')
     jobName = Inputs['job']
     location = Inputs['location']
